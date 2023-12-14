@@ -45,17 +45,25 @@
               <span class="hide-menu">Interfaces</span>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="./ui-buttons.html" aria-expanded="false">
+              <a class="sidebar-link" href="/seller" aria-expanded="false">
                 <span>
-                  <i class="ti ti-article"></i>
+                  <i class="ti ti-user"></i>
+                </span>
+                <span class="hide-menu">Seller</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="/vetements" aria-expanded="false">
+                <span>
+                  <i class="ti  ti-shopping-cart"></i>
                 </span>
                 <span class="hide-menu">Vetements</span>
               </a>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="./ui-alerts.html" aria-expanded="false">
+              <a class="sidebar-link" href="/categorie" aria-expanded="false">
                 <span>
-                  <i class="ti ti-alert-circle"></i>
+                  <i class="ti ti-article"></i>
                 </span>
                 <span class="hide-menu">Categories</span>
               </a>
@@ -94,7 +102,194 @@
       </header>
       <!--  Header End -->
       <div class="container-fluid">
+        ------------------------------vetements-------------------------------------
+
+        <div class="container mt-5">
+          <h2 class="mb-4">Gestion des Vêtements</h2>
+          <div class="row">
+              <div class="col-lg-6">
+                  <form>
+                      <div class="form-group">
+                          <label for="nom">Nom</label>
+                          <input type="text" class="form-control" id="nom">
+                      </div>
+                      <div class="form-group">
+                        <label for="vetement">Seller</label>
+                        <select class="form-control" id="vetement">
+                            <option selected>Choisir...</option>
+                            <!-- Options des vêtements -->
+                        </select>
+                    </div>
+                      <div class="form-group">
+                          <label for="vetement">Categorie Vêtement</label>
+                          <select class="form-control" id="vetement">
+                              <option selected>Choisir...</option>
+                              <!-- Options des vêtements -->
+                          </select>
+                      </div>
+                      <div class="btn-group" style="margin: 10px;">
+                          <button type="button" class="btn btn-primary">Ajouter</button>
+                          <button type="button" class="btn btn-secondary">Modifier</button>
+                          <button type="button" class="btn btn-danger">Supprimer</button>
+                      </div>
+                  </form>
+              </div>
+              <div class="col-lg-6">
+                  <table class="table">
+                    <thead class="bg-dark text-white">
+                      <tr>
+                          <th scope="col">Id</th>
+                          <th scope="col">nom</th>
+                          <th scope="col">seller</th>
+                          <th scope="col">Categorie</th>
+                          
+                      </tr>
+                  </thead>
+                      <!-- Table content -->
+                      <tr>
+                        <td>a</td>
+                        <td>b</td>
+                        <td><a href="">e</a></td>
+                        <td><a href="">e</a></td>
+
+                      </tr>
+                      <tr>
+                        <td>d</td>
+                        <td>e</td>
+                        <td><a href="">e</a></td>
+                        <td><a href="">e</a></td>
+                      </tr>
+                      <tr>
+                        <td>g</td>
+                        <td>h</td>
+                        <td>
+                          <a href="">e</a>
+                        </td>
+                        <td><a href="">e</a></td>
+
+                      </tr>
+                  </table>
+              </div>
+          </div>
+      </div>
       
+        
+        
+        -----------------------------cathegorie--------------------------------------
+        
+        <div class="container mt-5">
+            <h2 class="mb-4">Gestion des Catégories</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <form>
+                        <div class="form-group">
+                            <label for="nomCategorie">Nom</label>
+                            <input type="text" class="form-control" id="nomCategorie">
+                        </div>
+                        <div class="btn-group" style="margin: 10px;">
+                          <button type="button" class="btn btn-primary">Ajouter</button>
+                          <button type="button" class="btn btn-secondary">Modifier</button>
+                          <button type="button" class="btn btn-danger">Supprimer</button>
+                      </div>
+                    </form>
+                </div>
+                <div class="col-md-8">
+                    <table class="table">
+                        <thead class="bg-dark text-white">
+                            <tr>
+                                <th scope="col">Id</th>
+                                <th scope="col">Nom</th>
+                                <th scope="col">Nbre Vêtements</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Les données seront insérées ici -->
+                            
+                              <tr>
+                                <td>a</td>
+                                <td>b</td>
+                                <td>c</td>
+                              </tr>
+                              <tr>
+                                <td>d</td>
+                                <td>e</td>
+                                <td>f</td>
+                              </tr>
+                              <tr>
+                                <td>g</td>
+                                <td>h</td>
+                                <td>i</td>
+                              </tr>
+                          
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+        -----------------------------seller-----------------------------------------
+        
+        
+        <div class="container mt-5">
+            <h2 class="mb-4">Gestion des Vendeurs</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <form>
+                        <div class="form-group">
+                            <label for="loginVendeur">Login</label>
+                            <input type="text" class="form-control" id="loginVendeur">
+                        </div>
+                        <div class="form-group">
+                            <label for="passwordVendeur">Password</label>
+                            <input type="password" class="form-control" id="passwordVendeur">
+                        </div>
+                        <div class="btn-group"  style="margin: 10px;">
+                          <button type="button" class="btn btn-primary">Ajouter</button>
+                          <button type="button" class="btn btn-secondary">Modifier</button>
+                          <button type="button" class="btn btn-danger">Supprimer</button>
+                      </div>
+                    </form>
+                </div>
+                <div class="col-md-8">
+                    <table class="table">
+                        <thead class="bg-dark text-white">
+                            <tr>
+                                <th scope="col">Id</th>
+                                <th scope="col">Login</th>
+                                <th scope="col">Password</th>
+                                <th scope="col">Nbre Vêtements</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>a</td>
+                            <td>b</td>
+                            <td>c</td>
+                            <td>c</td>
+                          </tr>
+                          <tr>
+                            <td>d</td>
+                            <td>e</td>
+                            <td>f</td>
+                            <td>c</td>
+                          </tr>
+                          <tr>
+                            <td>g</td>
+                            <td>h</td>
+                            <td>i</td>
+                            <td>c</td>
+                          </tr>
+                          <tr>
+                            <td>g</td>
+                            <td>7</td>
+                            <td>i</td>
+                            <td>c</td>
+                          </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
       </div>
     </div>
   </div>
