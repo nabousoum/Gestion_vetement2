@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { SellerRoutingModule } from './seller-routing.module';
 import { SellerComponent } from './seller.component';
+import { AppModule } from '../app.module';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { SellerComponent } from './seller.component';
   ],
   imports: [
     CommonModule,
-    SellerRoutingModule
+    SellerRoutingModule,
+    AppModule
   ]
 })
 export class SellerModule { }

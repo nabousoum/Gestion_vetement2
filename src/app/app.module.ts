@@ -15,6 +15,9 @@ import { AppComponent } from './app.component';
   providers: [
     provideClientHydration()
   ],
+  exports: [
+    AppComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
