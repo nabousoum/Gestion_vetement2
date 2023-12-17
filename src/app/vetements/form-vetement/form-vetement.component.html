@@ -18,7 +18,7 @@
       <!-- Sidebar scroll-->
       <div>
         <div class="brand-logo d-flex align-items-center justify-content-between">
-          <a href="./index.html" class="text-nowrap logo-img">
+          <a href="/dashboard" class="text-nowrap logo-img">
             <img src="../../../assets/images/logos/dark-logo.svg" width="180" alt="" />
           </a>
           <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
@@ -33,7 +33,7 @@
               <span class="hide-menu">Home</span>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="./index.html" aria-expanded="false">
+              <a class="sidebar-link" href="/dashboard" aria-expanded="false">
                 <span>
                   <i class="ti ti-layout-dashboard"></i>
                 </span>
@@ -45,23 +45,15 @@
               <span class="hide-menu">Interfaces</span>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" routerLink="seller" aria-expanded="false">
-                <span>
-                  <i class="ti ti-user"></i>
-                </span>
-                <span class="hide-menu">Seller</span>
-              </a>
-            </li>
-            <li class="sidebar-item">
               <a class="sidebar-link" routerLink="/vetements/liste" aria-expanded="false">
                 <span>
-                  <i class="ti  ti-shopping-cart"></i>
+                  <i class="ti ti-shopping-cart"></i>
                 </span>
                 <span class="hide-menu">Vetements</span>
               </a>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" routerLink="categorie" aria-expanded="false">
+              <a class="sidebar-link" routerLink="/categorie/liste" aria-expanded="false">
                 <span>
                   <i class="ti ti-article"></i>
                 </span>
@@ -102,7 +94,30 @@
       </header>
       <!--  Header End -->
       <div class="container-fluid">
-        <ng-content></ng-content>
+        <div class="container-fluid">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="global-color card-title fw-semibold mb-4">Ajouter un vetement</h5>
+              <div class="card">
+                <div class="card-body">
+                  <form>
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label global-color">Libelle</label>
+                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputPassword1" class="form-label global-color">Categorie</label>
+                      <input type="test" class="form-control" id="exampleInputPassword1">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enregistrer</button>
+                  </form>
+                </div>
+              </div>
+              <a routerLink="/vetements/liste"><button class="btn btn-secondary">Retour</button></a>
+            </div>
+          </div>
+        </div>
+        
       </div>
     </div>
   </div>

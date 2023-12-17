@@ -12,7 +12,7 @@ import { MenuLayoutComponent } from './menu-layout/menu-layout.component';
     CommonModule
   ],
   exports:[
-    MenuLayoutComponent
+    
   ]
 })
 export class LayoutModule { }

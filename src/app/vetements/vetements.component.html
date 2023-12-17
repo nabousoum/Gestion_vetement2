@@ -18,7 +18,7 @@
       <!-- Sidebar scroll-->
       <div>
         <div class="brand-logo d-flex align-items-center justify-content-between">
-          <a href="./index.html" class="text-nowrap logo-img">
+          <a href="/dashboard" class="text-nowrap logo-img">
             <img src="../../assets/images/logos/dark-logo.svg" width="180" alt="" />
           </a>
           <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
@@ -33,7 +33,7 @@
               <span class="hide-menu">Home</span>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="./index.html" aria-expanded="false">
+              <a class="sidebar-link" href="/dashboard" aria-expanded="false">
                 <span>
                   <i class="ti ti-layout-dashboard"></i>
                 </span>
@@ -45,15 +45,7 @@
               <span class="hide-menu">Interfaces</span>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" routerLink="seller" aria-expanded="false">
-                <span>
-                  <i class="ti ti-user"></i>
-                </span>
-                <span class="hide-menu">Seller</span>
-              </a>
-            </li>
-            <li class="sidebar-item">
-              <a class="sidebar-link" routerLink="/vetements/vetements" aria-expanded="false">
+              <a class="sidebar-link" routerLink="/vetements/liste" aria-expanded="false">
                 <span>
                   <i class="ti  ti-shopping-cart"></i>
                 </span>
@@ -61,7 +53,7 @@
               </a>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" routerLink="categorie" aria-expanded="false">
+              <a class="sidebar-link" routerLink="/categorie/liste" aria-expanded="false">
                 <span>
                   <i class="ti ti-article"></i>
                 </span>
@@ -106,7 +98,7 @@
         <div class="container mt-5">
             <div class="row">
                 <div class="col-lg-6">
-                    <button class ="btn btn-success"><i class="fa-solid fa-check"></i>Ajouter</button>
+                    <a routerLink="/vetements/addVetement"><button class ="btn btn-success"><i class="fa-solid fa-check"></i>Ajouter</button></a>
                     <table class="table table-striped">
                         <thead>
                           <tr >
