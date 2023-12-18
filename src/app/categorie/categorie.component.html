@@ -1,15 +1,5 @@
-<!doctype html>
-<html lang="en">
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>VestOnline</title>
-  <link rel="shortcut icon" type="image/png" href="../../assets/images/logos/favicon.png" />
-  <link rel="stylesheet" href="../../assets/css/styles.min.css" />
-</head>
 
-<body>
   <!--  Body Wrapper -->
   <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
     data-sidebar-position="fixed" data-header-position="fixed">
@@ -96,85 +86,44 @@
       <div class="container-fluid">
         <h2 color="#615dff">Gestion des Categories</h2>
         <div class="container mt-5">
-            <div class="row">
-                <div class="col-lg-6">
-                    <a routerLink="/categorie/addCategorie"><button class ="btn btn-success"><i class="fa-solid fa-check"></i>Ajouter</button></a>
-                    <table class="table table-striped">
-                        <thead>
-                          <tr >
-                            <th scope="col">Nom</th>
-                            <th scope="col">Vendeur</th>
-                            <th scope="col">Categorie</th>
-                            <th scope="col">Actions</th>
-                          </tr>
-                        </thead>
-                        <tbody>
+          <div class="row">
+              <div class="col-lg-6">
+                  <a routerLink="/categorie/addCategorie"><button class="btn btn-success"><i class="fa-solid fa-check"></i> Ajouter</button></a>
+                  <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th scope="col">Nom</th>
+                          <th scope="col">Vêtements</th>
+                          <th scope="col">Actions</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <ng-container *ngIf="categories$ | async as categories ;else loading">
+                      
+                        <tr *ngFor="let categorie of categories.data">
+                          <td>{{ categorie.attributes.name }}</td>
+                          
+                          <td>
+                              <button class="btn btn-warning m-2"><i class="fa-solid fa-check"></i> Détail</button>
+                              <button class="btn btn-info m-2"><i class="fa-solid fa-check"></i> Éditer</button>
+                              <button class="btn btn-danger"><i class="fa-solid fa-check"></i> Supprimer</button>
+                          </td>
+                        </tr>
+                        </ng-container>
+                        <ng-template #loading>
                           <tr>
-                            <td>a</td>
-                            <td>b</td>
-                            <td>c</td>
-                            <td>
-                                <button class ="btn btn-warning m-2"><i class="fa-solid fa-check"></i>Detail</button>
-                                <button class ="btn btn-info m-2"><i class="fa-solid fa-check"></i>Editer</button>
-                                <button class ="btn btn-danger"><i class="fa-solid fa-check"></i>Supprimer</button>
-                            </td>
+                            <div class="spinner-border m-5" role="status">
+                              <span class="visually-hidden">Loading...</span>
+                            </div>
                           </tr>
-                          <tr>
-                            <td>a</td>
-                            <td>b</td>
-                            <td>c</td>
-                            <td>
-                                <button class ="btn btn-warning m-2"><i class="fa-solid fa-check"></i>Detail</button>
-                                <button class ="btn btn-info m-2"><i class="fa-solid fa-check"></i>Editer</button>
-                                <button class ="btn btn-danger"><i class="fa-solid fa-check"></i>Supprimer</button>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>a</td>
-                            <td>b</td>
-                            <td>c</td>
-                            <td>
-                                <button class ="btn btn-warning m-2"><i class="fa-solid fa-check"></i>Detail</button>
-                                <button class ="btn btn-info m-2"><i class="fa-solid fa-check"></i>Editer</button>
-                                <button class ="btn btn-danger"><i class="fa-solid fa-check"></i>Supprimer</button>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>a</td>
-                            <td>b</td>
-                            <td>c</td>
-                            <td>
-                                <button class ="btn btn-warning m-2"><i class="fa-solid fa-check"></i>Detail</button>
-                                <button class ="btn btn-info m-2"><i class="fa-solid fa-check"></i>Editer</button>
-                                <button class ="btn btn-danger"><i class="fa-solid fa-check"></i>Supprimer</button>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>a</td>
-                            <td>b</td>
-                            <td>c</td>
-                            <td>
-                                <button class ="btn btn-warning m-2"><i class="fa-solid fa-check"></i>Detail</button>
-                                <button class ="btn btn-info m-2"><i class="fa-solid fa-check"></i>Editer</button>
-                                <button class ="btn btn-danger"><i class="fa-solid fa-check"></i>Supprimer</button>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                </div>
-            </div>
-        </div>
+                        </ng-template>
+                        
+                      </tbody>
+                    </table>
+              </div>
+          </div>
+      </div>
         
       </div>
     </div>
   </div>
-  <script src="../../assets/libs/jquery/dist/jquery.min.js"></script>
-  <script src="../../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="../../assets/js/sidebarmenu.js"></script>
-  <script src="../../assets/js/app.min.js"></script>
-  <script src="../../assets/libs/apexcharts/dist/apexcharts.min.js"></script>
-  <script src="../../assets/libs/simplebar/dist/simplebar.js"></script>
-  <script src="../../assets/js/dashboard.js"></script>
-</body>
-
-</html>
