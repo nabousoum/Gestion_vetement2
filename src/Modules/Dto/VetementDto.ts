@@ -1,10 +1,12 @@
-import { CategorieDto } from "./CategorieDto";
-
 export interface VetementDto {
     id: number;
-    nom: string;
-    vendeur: string;
-    categorie: CategorieDto[];
-    nbreVetement: number;
-
-}
+    attributes?: {
+      name: string;
+      description: string;
+      create_at: string;
+      quantity: number;
+      price: number;
+      currency: string;
+    }
+  }
+  

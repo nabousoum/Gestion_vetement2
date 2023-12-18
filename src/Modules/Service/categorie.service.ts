@@ -24,7 +24,7 @@ export class CategorieService {
         return this.http.get<DataCategorie>(`${this.apiUrl}/${id}`);
     }
 
-    createCategorie(categorie: DataCategorie): Observable<DataCategorie | null> {
+    createCategorie(categorie: DataCategorie): Observable<DataCategorie> {
         return this.http.post<DataCategorie>(this.apiUrl, categorie, this.httpOptions);
     }
 

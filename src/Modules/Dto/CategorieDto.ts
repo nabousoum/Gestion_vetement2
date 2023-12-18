@@ -17,7 +17,7 @@ export interface CategorieDto {
                         price:number,
                         currency: string,
                     }
-                }
+                }?
             ]
         }
     }

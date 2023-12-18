@@ -1,13 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { VetementsComponent } from './vetements.component';
 import { FormVetementComponent } from './form-vetement/form-vetement.component';
+import {VetementComponent} from './vetements.component'
 
 const routes: Routes = [
-  { path: 'liste',
-   component: VetementsComponent,
+  { 
+    path: 'liste',
+    component: VetementComponent,
   },
-  { path: 'addVetement',
+  { 
+    path: 'addVetement',
     component: FormVetementComponent,
  },
 ];

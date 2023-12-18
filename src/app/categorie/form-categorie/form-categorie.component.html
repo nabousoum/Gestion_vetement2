@@ -1,15 +1,4 @@
-<!doctype html>
-<html lang="en">
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>VestOnline</title>
-  <link rel="shortcut icon" type="image/png" href="../../../assets/images/logos/favicon.png" />
-  <link rel="stylesheet" href="../../../assets/css/styles.min.css" />
-</head>
-
-<body>
   <!--  Body Wrapper -->
   <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
     data-sidebar-position="fixed" data-header-position="fixed">
@@ -100,16 +89,13 @@
               <h5 class="global-color card-title fw-semibold mb-4">Ajouter une categorie</h5>
               <div class="card">
                 <div class="card-body">
-                  <form>
-                    <div class="mb-3">
-                      <label for="exampleInputEmail1" class="form-label">Libelle</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  <form (ngSubmit)="onSubmit()">
+                    <div class="form-group">
+                      <label for="name">Nom de la Catégorie</label>
+                      <input type="text" class="form-control" id="name" [(ngModel)]="categorie.attributes.name" name="name" required>
                     </div>
-                    <div class="mb-3">
-                      <label for="exampleInputPassword1" class="form-label">vetements</label>
-                      <input type="test" class="form-control" id="exampleInputPassword1">
-                    </div>
-                    <button type="submit" class="btn btn-primary">Enregistrer</button>
+                  
+                    <button type="submit" class="btn btn-primary">Soumettre</button>
                   </form>
                 </div>
               </div>
@@ -121,13 +107,4 @@
       </div>
     </div>
   </div>
-  <script src="../../../assets/libs/jquery/dist/jquery.min.js"></script>
-  <script src="../../../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="../../../assets/js/sidebarmenu.js"></script>
-  <script src="../../../assets/js/app.min.js"></script>
-  <script src="../../../assets/libs/apexcharts/dist/apexcharts.min.js"></script>
-  <script src="../../../assets/libs/simplebar/dist/simplebar.js"></script>
-  <script src="../../../assets/js/dashboard.js"></script>
-</body>
 
-</html>

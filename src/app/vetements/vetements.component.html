@@ -42,11 +42,11 @@
               </a>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" routerLink="/categorie/liste" aria-expanded="false">
+              <a class="sidebar-link" routerLink="/vetement/liste" aria-expanded="false">
                 <span>
                   <i class="ti ti-article"></i>
                 </span>
-                <span class="hide-menu">Categories</span>
+                <span class="hide-menu">vetements</span>
               </a>
             </li>
           </ul>
@@ -92,62 +92,33 @@
                         <thead>
                           <tr >
                             <th scope="col">Nom</th>
-                            <th scope="col">Vendeur</th>
+                            <th scope="col">Description</th>
                             <th scope="col">Categorie</th>
                             <th scope="col">Actions</th>
                           </tr>
                         </thead>
                         <tbody>
-                          <tr>
-                            <td>a</td>
-                            <td>b</td>
-                            <td>c</td>
-                            <td>
-                                <button class ="btn btn-warning m-2"><i class="fa-solid fa-check"></i>Detail</button>
-                                <button class ="btn btn-info m-2"><i class="fa-solid fa-check"></i>Editer</button>
-                                <button class ="btn btn-danger"><i class="fa-solid fa-check"></i>Supprimer</button>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>a</td>
-                            <td>b</td>
-                            <td>c</td>
-                            <td>
-                                <button class ="btn btn-warning m-2"><i class="fa-solid fa-check"></i>Detail</button>
-                                <button class ="btn btn-info m-2"><i class="fa-solid fa-check"></i>Editer</button>
-                                <button class ="btn btn-danger"><i class="fa-solid fa-check"></i>Supprimer</button>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>a</td>
-                            <td>b</td>
-                            <td>c</td>
-                            <td>
-                                <button class ="btn btn-warning m-2"><i class="fa-solid fa-check"></i>Detail</button>
-                                <button class ="btn btn-info m-2"><i class="fa-solid fa-check"></i>Editer</button>
-                                <button class ="btn btn-danger"><i class="fa-solid fa-check"></i>Supprimer</button>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>a</td>
-                            <td>b</td>
-                            <td>c</td>
-                            <td>
-                                <button class ="btn btn-warning m-2"><i class="fa-solid fa-check"></i>Detail</button>
-                                <button class ="btn btn-info m-2"><i class="fa-solid fa-check"></i>Editer</button>
-                                <button class ="btn btn-danger"><i class="fa-solid fa-check"></i>Supprimer</button>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>a</td>
-                            <td>b</td>
-                            <td>c</td>
-                            <td>
-                                <button class ="btn btn-warning m-2"><i class="fa-solid fa-check"></i>Detail</button>
-                                <button class ="btn btn-info m-2"><i class="fa-solid fa-check"></i>Editer</button>
-                                <button class ="btn btn-danger"><i class="fa-solid fa-check"></i>Supprimer</button>
-                            </td>
-                          </tr>
+                          <ng-container *ngIf="vetements$ | async as vetements ;else loading">
+
+                            <tr *ngFor="let vetement of vetements.data">
+                              <td>{{ vetement.attributes?.name }}</td>
+                              <td>{{ vetement.attributes?.description }}</td>
+                              <td>{{ vetement.attributes?.currency }}</td>
+          
+                              <td>
+                                <button class="btn btn-warning m-2"(click)="gerrerDetail(vetement.id)"><i class="fa-solid fa-check"></i> Détail</button>
+                                <button class="btn btn-info m-2"(click)="gerrerEdition(vetement.id)"><i class="fa-solid fa-check"></i> Éditer</button>
+                                <button class="btn btn-danger"(click)="gerrerSuppression(vetement.id)"><i class="fa-solid fa-check"></i> Supprimer</button>
+                              </td>
+                            </tr>
+                          </ng-container>
+                          <ng-template #loading>
+                            <tr class="spinner-border m-5" role="status">
+                              
+                              <td class="visually-hidden">Loading...</td>
+                              
+                            </tr>
+                          </ng-template>
                         </tbody>
                       </table>
                 </div>

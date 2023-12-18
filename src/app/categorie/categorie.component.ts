@@ -23,4 +23,26 @@ export class CategorieComponent implements OnInit {
     //   console.error('Erreur lors de la récupération des catégories', error);
     // });
   }
+
+  ouvrirAlert(){
+    alert("vide")
+  }
+
+  gerrerDetail(id:number){
+    alert(this.categorieService.getCategorieById(id).pipe)
+  }
+  gerrerSuppression(id:number){
+    this.categorieService.deleteCategorie(id)
+  }
+  gerrerEdition(id:number){
+    
+  }
+
+
+
+
+ 
+  
+
+
 }
