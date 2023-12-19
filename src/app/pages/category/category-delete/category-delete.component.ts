@@ -1,6 +1,6 @@
 import { Component, Input, inject } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import { CategorieService } from '../../../../Modules/Service/categorie.service';
+import { CategorieService } from '../../../models/service/categorie.service';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
@@ -16,7 +16,6 @@ export class CategoryDeleteComponent {
     this.serviceCategory.deleteCategorie(this.id).subscribe({
       next: (response) => {
           this.toastr.success('Catégorie supprimée avec succès.', 'Succès')
-          this.serviceCategory.deleteCategorie(this.id)
           this.activeModal.close()
       },
       error: (error) => this.toastr.error('Suppression échouée', 'Erreur')

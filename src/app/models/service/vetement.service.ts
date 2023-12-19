@@ -3,12 +3,13 @@ import { DataVetement } from '../Dto/DataVetement';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { VetementDto } from '../Dto/VetementDto';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
     providedIn: 'root'
 })
 export class VetementService {
-    private apiUrl = 'http://3.145.58.43:1337/api/clothes'; // Remplacer avec l'URL réelle de votre API
+    private apiUrl = `${environment.host_url}/api/clothes`; // Remplacer avec l'URL réelle de votre API
     httpOptions = {
         headers: new HttpHeaders({ 'Content-Type': 'application/json' })
     };

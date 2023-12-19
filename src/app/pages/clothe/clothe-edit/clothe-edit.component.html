@@ -1,0 +1,44 @@
+<ng-template #content let-modal>
+	<div class="modal-header">
+		<h4 class="modal-title fw-bold" id="modal-basic-title">Ajouter un vêtement</h4>
+		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+	</div>
+	<div class="modal-body">
+		<form [formGroup]="clotheForm">
+			<div class="mb-3">
+                <label for="clotheName" class="form-label">Nom</label>
+                <input type="text" class="form-control" id="clotheName" formControlName="name">
+            </div>
+            <div class="mb-3">
+                <label for="clothePrice" class="form-label">Prix</label>
+                <input type="number" class="form-control" id="clothePrice" formControlName="price">
+            </div>
+            <div class="mb-3">
+                <label for="clotheDescription" class="form-label">Description</label>
+                <input type="text" class="form-control" id="clotheDescription" formControlName="description">
+            </div>
+            <div class="mb-3">
+                <label for="clotheQuantity" class="form-label">Quantité</label>
+                <input type="number" class="form-control" id="clotheQuantity" formControlName="quantity">
+            </div>
+            <div class="mb-3">
+                <label for="clotheCategory" class="form-label">Catégorie</label>
+                <select class="form-select" aria-label="Default select example" id="clotheCategory" formControlName="category">
+                    <ng-container *ngIf="categories$| async as categories ;else loading ">
+                        <option *ngFor="let categorie of categories.data" [value]="categorie.id">{{categorie.attributes.name}}</option>
+                    </ng-container>
+                    <ng-template #loading>
+                        <div class="spinner-border m-5" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                    </ng-template>
+                </select>
+            </div>
+		</form>
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-outline-success" (click)="onSubmit()">Editer</button>
+	</div>
+</ng-template>
+
+<button class="btn btn-info me-2" (click)="open(content)">Editer</button>

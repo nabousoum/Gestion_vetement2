@@ -1,10 +1,10 @@
 import { Component, Input, OnInit, TemplateRef } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { CategorieService } from '../../../../Modules/Service/categorie.service';
+import { CategorieService } from '../../../models/service/categorie.service';
 import { categoryFormInit } from '../data.category';
 import { ToastrService } from 'ngx-toastr';
-import { CategorieDto } from '../../../../Modules/Dto/CategorieDto';
+import { CategorieDto } from '../../../models/Dto/CategorieDto';
 
 @Component({
   selector: 'app-category-update',

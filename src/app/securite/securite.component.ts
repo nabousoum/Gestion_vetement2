@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { DataUser } from '../../Modules/Dto/DataUser';
-import { LoginService } from '../../Modules/Service/login.service';
+import { DataUser } from '../models/Dto/DataUser';
+import { LoginService } from '../models/service/login.service';
 
 
 @Component({

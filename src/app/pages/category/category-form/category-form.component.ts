@@ -1,8 +1,8 @@
 import { Component, TemplateRef, inject } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { Category, categoryFormInit } from '../data.category';
-import { CategorieService } from '../../../../Modules/Service/categorie.service';
+import { categoryFormInit } from '../data.category';
+import { CategorieService } from '../../../models/service/categorie.service';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
