@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Router } from '@angular/router';
-import { LoginService } from '../../Modules/Service/login.service';
-import { DataUser } from '../../Modules/Dto/DataUser';
 import { Observable } from 'rxjs';
+import { DataUser } from '../../Modules/Dto/DataUser';
+import { LoginService } from '../../Modules/Service/login.service';
 
 
 @Component({

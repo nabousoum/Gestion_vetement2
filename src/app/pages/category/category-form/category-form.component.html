@@ -1,0 +1,19 @@
+<ng-template #content let-modal>
+	<div class="modal-header">
+		<h4 class="modal-title" id="modal-basic-title">Ajouter une catégorie</h4>
+		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+	</div>
+	<div class="modal-body">
+		<form [formGroup]="categoryForm">
+			<div class="mb-3">
+                <label for="categoryName" class="form-label">Nom de la catégorie</label>
+                <input type="text" class="form-control" id="categoryName" formControlName="name">
+              </div>
+		</form>
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-outline-success" (click)="onSubmit()">Save</button>
+	</div>
+</ng-template>
+
+<button class="btn btn-outline-success" (click)="open(content)">Ajouter</button>
