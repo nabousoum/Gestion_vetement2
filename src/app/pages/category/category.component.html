@@ -19,9 +19,8 @@
                   <td>{{ categorie.id }}</td>
                   <td>{{ categorie.attributes.name }}</td>
                   <td>
-                    <button class="btn btn-warning m-2"><i class="fa-solid fa-check"></i> Détail</button>
-                    <button class="btn btn-info m-2"><i class="fa-solid fa-check"></i> Éditer</button>
-                    <button class="btn btn-danger"><i class="fa-solid fa-check"></i> Supprimer</button>
+                    <button class="btn btn-info m-2"> Éditer</button>
+                    <button class="btn btn-danger" (click)="delete(categorie.id)"> Supprimer</button>
                   </td>
                 </tr>
               </ng-container>
