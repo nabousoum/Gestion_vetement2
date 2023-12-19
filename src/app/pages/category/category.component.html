@@ -19,7 +19,7 @@
                   <td>{{ categorie.id }}</td>
                   <td>{{ categorie.attributes.name }}</td>
                   <td>
-                    <button class="btn btn-info m-2"> Éditer</button>
+                    <app-category-update [category]="categorie"></app-category-update>
                     <button class="btn btn-danger" (click)="delete(categorie.id)"> Supprimer</button>
                   </td>
                 </tr>

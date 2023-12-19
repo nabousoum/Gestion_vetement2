@@ -7,13 +7,15 @@ import { CategoryFormComponent } from './category-form/category-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CategoryDeleteComponent } from './category-delete/category-delete.component';
+import { CategoryUpdateComponent } from './category-update/category-update.component';
 
 
 @NgModule({
   declarations: [
     CategoryComponent,
     CategoryFormComponent,
-    CategoryDeleteComponent
+    CategoryDeleteComponent,
+    CategoryUpdateComponent
   ],
   imports: [
     CommonModule,
