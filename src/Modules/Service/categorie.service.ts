@@ -24,8 +24,8 @@ export class CategorieService {
         return this.http.get<DataCategorie>(`${this.apiUrl}/${id}`);
     }
 
-    createCategorie(categorie: DataCategorie): Observable<DataCategorie> {
-        return this.http.post<DataCategorie>(this.apiUrl, categorie, this.httpOptions);
+    createCategorie(categorie: any): Observable<DataCategorie> {
+        return this.http.post<any>(this.apiUrl, categorie, this.httpOptions);
     }
 
     deleteCategorie(id: number) {
