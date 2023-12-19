@@ -31,7 +31,7 @@ export class CategoryFormComponent {
             this.toastr.success('Catégorie ajoutée avec succès.', 'Succès')
             this.modalService.dismissAll()
         },
-        error: (error) => console.error('Error saving category', error)
+        error: (error) => this.toastr.error("Echec de l'ajout", 'Erreur')
       });
     }
     else{
