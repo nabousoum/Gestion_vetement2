@@ -1,7 +1,7 @@
 import { Component, OnDestroy } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
-import { DataCategorie } from '../../../Modules/Dto/DataCategorie';
-import { CategorieService } from '../../../Modules/Service/categorie.service';
+import { DataCategorie } from '../../models/Dto/DataCategorie';
+import { CategorieService } from '../../models/service/categorie.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { CategoryDeleteComponent } from './category-delete/category-delete.component';
 
