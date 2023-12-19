@@ -4,6 +4,7 @@ import { LayoutComponent } from './layout/layout.component';
 
 const routes: Routes = [
   { path: '', loadChildren: () => import('./securite/securite.module').then(m => m.SecuriteModule) },
+  { path: 'admin', loadChildren: () => import('./layout/layout.module').then(m => m.LayoutModule) },
   {
     path: '',
     component: LayoutComponent,
