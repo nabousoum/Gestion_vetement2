@@ -1,15 +1,15 @@
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, Subject, tap } from 'rxjs';
 import { DataCategorie } from '../Dto/DataCategorie';
-import { CategorieDto } from '../Dto/CategorieDto';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CategorieService {
 
-  private apiUrl = 'http://3.145.58.43:1337/api/categories'; // Remplacer avec l'URL réelle de votre API
+  private apiUrl = 'http://3.145.58.43:1337/api/categories';
+  private categoryUpdated = new Subject<void>();
     httpOptions = {
         headers: new HttpHeaders({ 'Content-Type': 'application/json' })
     };
@@ -23,17 +23,32 @@ export class CategorieService {
     getCategorieById(id: number): Observable<DataCategorie>{
         return this.http.get<DataCategorie>(`${this.apiUrl}/${id}`);
     }
-
-    createCategorie(categorie: any): Observable<DataCategorie> {
-        return this.http.post<any>(this.apiUrl, categorie, this.httpOptions);
-    }
+    
+      createCategorie(categorie: any): Observable<any> {
+        return this.http.post<any>(this.apiUrl, categorie).pipe(
+          tap(() => {
+            this.categoryUpdated.next();
+          })
+        );
+      }
 
     deleteCategorie(id: number) {
-        return this.http.delete<DataCategorie>(`${this.apiUrl}/${id}`, this.httpOptions);
+        return this.http.delete<DataCategorie>(`${this.apiUrl}/${id}`, this.httpOptions).pipe(
+            tap(()=> {
+                this.categoryUpdated.next()
+            })
+        );
     }
 
-    updateCategorie(categorie: CategorieDto){
-        return this.http.put(`${this.apiUrl}/${categorie.id}`, categorie, this.httpOptions);
+    updateCategorie(categorie: any){
+        return this.http.put(`${this.apiUrl}/${categorie.data.id}`, categorie, this.httpOptions).pipe(
+            tap(()=>{
+                this.categoryUpdated.next()
+            })
+        );
     }
 
+    get categoryUpdatedObservable() {
+        return this.categoryUpdated.asObservable();
+    }
 }

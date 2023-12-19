@@ -1,18 +1,34 @@
-import { Component } from '@angular/core';
-import { Observable } from 'rxjs';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { categoryFormInit } from './data.category';
+import { Component, OnDestroy } from '@angular/core';
+import { Observable, Subscription } from 'rxjs';
 import { DataCategorie } from '../../../Modules/Dto/DataCategorie';
 import { CategorieService } from '../../../Modules/Service/categorie.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { CategoryDeleteComponent } from './category-delete/category-delete.component';
 
 @Component({
   selector: 'app-category',
   templateUrl: './category.component.html',
   styleUrl: './category.component.css'
 })
-export class CategoryComponent {
-  categories$:Observable<DataCategorie>;
-  constructor(private categorieService: CategorieService) {
-    this.categories$=this.categorieService.getAllCategories()
+export class CategoryComponent implements OnDestroy{
+  categories$!:Observable<DataCategorie>;
+  private categoryUpdateSubscription: Subscription;
+  constructor(private categoryService: CategorieService, private modalService: NgbModal) {
+    this.loadCategories();
+    this.categoryUpdateSubscription = this.categoryService.categoryUpdatedObservable.subscribe(() => {
+      this.loadCategories();
+    });
+  }
+  loadCategories() {
+    this.categories$ = this.categoryService.getAllCategories();
+  }
+  delete(id: number) {
+		const modalRef = this.modalService.open(CategoryDeleteComponent);
+		modalRef.componentInstance.id = id;
+	}
+  ngOnDestroy() {
+    if (this.categoryUpdateSubscription) {
+      this.categoryUpdateSubscription.unsubscribe();
+    }
   }
 }
