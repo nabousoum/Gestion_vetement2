@@ -1,0 +1,45 @@
+
+<div class="d-flex justify-content-between">
+    <h2 class="fw-bold" color="#615dff">Gestion des vêtements</h2>
+    <app-clothe-add></app-clothe-add>
+</div>
+    <div class="container mt-5">
+      <div class="row">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Nom</th>
+                <th scope="col">Description</th>
+                <th scope="col">Quantité</th>
+                <th scope="col">Prix</th>
+                <th scope="col">Catégorie</th>
+                <th scope="col">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <ng-container *ngIf="clothes$ | async as clothes ;else loading">
+                <tr *ngFor="let clothe of clothes.data">
+                  <td>{{ clothe.id }}</td>
+                  <td>{{ clothe.attributes.name }}</td>
+                  <td>{{ clothe.attributes.description }}</td>
+                  <td>{{ clothe.attributes.quantity }}</td>
+                  <td>{{ clothe.attributes.price }}</td>
+                  <td>{{ clothe.attributes.category.data.attributes.name }}</td>
+                  <td>
+                    <app-clothe-edit [clothe]="clothe"></app-clothe-edit>
+                    <app-clothe-delete [clothe]="clothe"></app-clothe-delete>
+                  </td>
+                </tr>
+              </ng-container>
+              <ng-template #loading>
+                <tr>
+                  <div class="spinner-border m-5" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                  </div>
+                </tr>
+              </ng-template>
+            </tbody>
+          </table>
+      </div>
+    </div>

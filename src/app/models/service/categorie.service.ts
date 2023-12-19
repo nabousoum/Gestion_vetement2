@@ -2,15 +2,16 @@ import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, Subject, tap } from 'rxjs';
 import { DataCategorie } from '../Dto/DataCategorie';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CategorieService {
 
-  private apiUrl = 'http://3.145.58.43:1337/api/categories';
+  private apiUrl = `${environment.host_url}/api/categories`;
   private categoryUpdated = new Subject<void>();
-    httpOptions = {
+  private httpOptions = {
         headers: new HttpHeaders({ 'Content-Type': 'application/json' })
     };
 

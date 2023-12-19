@@ -1,0 +1,14 @@
+<ng-template #content let-modal>
+	<div class="modal-header">
+		<h4 class="modal-title fw-bold" id="modal-basic-title">Ajouter un vêtement</h4>
+		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+	</div>
+	<div class="modal-body">
+		Voulez-vous vraiment supprimer ce vêtement?
+    </div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-outline-danger" (click)="delete()">Supprimer</button>
+	</div>
+</ng-template>
+
+<button class="btn btn-danger" (click)="open(content)">Supprimer</button>
