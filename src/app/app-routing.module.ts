@@ -1,13 +1,20 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { LayoutComponent } from './layout/layout.component';
 
 const routes: Routes = [
-  { path: 'vetements', loadChildren: () => import('./vetements/vetements.module').then(m => m.VetementsModule) },
-  { path: 'categorie', loadChildren: () => import('./categorie/categorie.module').then(m => m.CategorieModule) },
-  { path: 'dashboard', loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule) },
-  { path: '', loadChildren: () => import('./securite/securite.module').then(m => m.SecuriteModule) }
-    
-];
+  { path: '', loadChildren: () => import('./securite/securite.module').then(m => m.SecuriteModule) },
+  {
+    path: '',
+    component: LayoutComponent,
+    children:[
+      {
+        path: "category",
+        loadChildren: () => import('./pages/category/category.module').then(m => m.CategoryModule)
+      },
+    ]  
+  }
+]
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

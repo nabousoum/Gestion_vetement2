@@ -37,11 +37,11 @@
               <span>
                 <i class="ti  ti-shopping-cart"></i>
               </span>
-              <span class="hide-menu">Vetements</span>
+              <span class="hide-menu">Vêtements</span>
             </a>
           </li>
           <li class="sidebar-item">
-            <a class="sidebar-link" routerLink="/categorie/liste" aria-expanded="false">
+            <a class="sidebar-link" routerLink="/category" aria-expanded="false">
               <span>
                 <i class="ti ti-article"></i>
               </span>
@@ -82,64 +82,7 @@
     </header>
     <!--  Header End -->
     <div class="container-fluid">
-      <h2 color="#615dff">Gestion des Categories</h2>
-      <div class="container mt-5">
-        <div class="row">
-          <div class="col-lg-6">
-            <a routerLink="/categorie/addCategorie"><button class="btn btn-success"><i class="fa-solid fa-check"></i>
-                Ajouter</button></a>
-            <table class="table table-striped">
-              <thead>
-                <tr>
-                  <th scope="col">Nom</th>
-                  <th scope="col">Description</th>
-                  <th scope="col">Quantité</th>
-                  <th scope="col">Prix</th>
-                  <th scope="col">Actions</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>a</td>
-                  <td>a</td>
-                  <td>a</td>
-                  <td>a</td>
-                  <td>
-                    <button class="btn btn-warning m-2"(click)="ouvrirAlert()"><i class="fa-solid fa-check" ></i>
-                      Détail</button>
-                    <button class="btn btn-info m-2"><i class="fa-solid fa-check"></i> Éditer</button>
-                    <button class="btn btn-danger"><i class="fa-solid fa-check"></i> Supprimer</button>
-                  </td>
-                </tr>
-                <ng-container *ngIf="categories$ | async as categories ;else loading">
-
-                  <tr *ngFor="let categorie of categories.data">
-                    <td>{{ categorie.attributes.name }}</td>
-                    <td>{{ categorie.attributes.clothes }}</td>
-                    <td>{{ categorie.attributes.name }}</td>
-                    <td>{{ categorie.attributes.clothes}}</td>
-                    <td>
-                      <button class="btn btn-warning m-2"(click)="gerrerDetail(categorie.id)"><i class="fa-solid fa-check"
-                          ></i> Détail</button>
-                      <button class="btn btn-info m-2"(click)="gerrerEdition(categorie.id)"><i class="fa-solid fa-check"></i> Éditer</button>
-                      <button class="btn btn-danger" (click)="gerrerSuppression(categorie.id)"><i class="fa-solid fa-check"></i> Supprimer</button>
-                    </td>
-                  </tr>
-                </ng-container>
-                <ng-template #loading>
-                  <tr>
-                    <div class="spinner-border m-5" role="status">
-                      <span class="visually-hidden">Loading...</span>
-                    </div>
-                  </tr>
-                </ng-template>
-
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-
+      <router-outlet></router-outlet>
     </div>
   </div>
 </div>

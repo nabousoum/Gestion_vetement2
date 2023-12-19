@@ -1,0 +1,38 @@
+
+<div class="d-flex justify-content-between">
+    <h2 class="fw-bold" color="#615dff">Gestion des catégories</h2>
+    <app-category-form></app-category-form>
+</div>
+    <div class="container mt-5">
+      <div class="row">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Nom</th>
+                <th scope="col">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <ng-container *ngIf="categories$ | async as categories ;else loading">
+                <tr *ngFor="let categorie of categories.data">
+                  <td>{{ categorie.id }}</td>
+                  <td>{{ categorie.attributes.name }}</td>
+                  <td>
+                    <button class="btn btn-warning m-2"><i class="fa-solid fa-check"></i> Détail</button>
+                    <button class="btn btn-info m-2"><i class="fa-solid fa-check"></i> Éditer</button>
+                    <button class="btn btn-danger"><i class="fa-solid fa-check"></i> Supprimer</button>
+                  </td>
+                </tr>
+              </ng-container>
+              <ng-template #loading>
+                <tr>
+                  <div class="spinner-border m-5" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                  </div>
+                </tr>
+              </ng-template>
+            </tbody>
+          </table>
+      </div>
+    </div>
